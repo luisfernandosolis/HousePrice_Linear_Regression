@@ -1,0 +1,13 @@
+{% extends 'base.html'%}
+
+{% block content%}
+<form action="{% url 'model' %}" method="post">
+    {% csrf_token%}
+    <label>ingrese el valor a predecir: </label>
+    <input type="text" name="input_value">
+    <button type="submit">Consultar</button>
+</form>
+
+<label>Result: <strong>{{data}}</strong></label>
+
+{%endblock%}
